@@ -17,7 +17,7 @@ function Search(props) {
 
   return (
     <div className="Search">
-        <h3>Clima e Previsão do Tempo / Cidade / Previsão do tempo 15 dias ou Real Time / </h3>
+        <h3>Clima e Previsão do Tempo / Cidade / Paises / Previsão do tempo 15 dias ou Real Time / </h3>
       <input placeholder={props.placeholder} onKeyUp={detectSearch} type="text"  name='searchInput'></input>
     </div>
   );
