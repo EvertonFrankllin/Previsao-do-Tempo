@@ -20,6 +20,13 @@
     outline: none;
     margin-top: 20px;
 }
+.Search input[type='submit']{
+    padding: 10px;
+    margin-left:5px;
+    background-color:blue;
+    color:white;
+}
+
 .Search h3{
     padding: 20px;
     color: rgb(163, 69, 69);
