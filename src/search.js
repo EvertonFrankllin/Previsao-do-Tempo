@@ -13,7 +13,7 @@ function Search(props) {
     Fazendo minha requisição em realtime
     alert(currentValue)
     */
-   const url = `https://api.openweathermap.org/data/2.5/weather?q=${currentValue}&appid=4d8fb5b93d4af21d66a2948710284366&units=metric`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${currentValue}&appid=6e9ea4eae221a29d6b41d265bda03681&units=metric`;
 
         fetch(url)
 
