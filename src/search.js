@@ -1,10 +1,13 @@
-
+import {useState} from 'react';
 import './Search.css';
 
 function Search(props) {
 
+  const [cidade, setCidade] = useState("");
+
     function detectSearch(e){
       e.preventDefault();
+      //setCidade=("");
     
 
     let currentValue = document.querySelector('[name=detectSearch]')
@@ -21,25 +24,55 @@ function Search(props) {
 
         .then(data=>{
 
-            const {main, name, sys, weather} = data;
+            const {main, name, sys, weather, clouds} = data;
 
-            if(sys != undefined)
+            if(sys != undefined){
 
                 console.log(sys);
 
-            if(weather != undefined)
+            if(weather != undefined){
+                  const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0]["icon"]}.svg`;
+                  setCidade(`
+                  <div class="result">
 
-                console.log(weather[0]['description']);
+                    <div class="value">
 
+                      <p> <b>Pais:</b> ${sys.country}</p>
+                      <p> <b>Temperatura:</b> ${main.temp} </p>
+                      <P> <b>Máxima:</b> ${main.temp_max}</p>
+                      <P> <b>Minima:</b> ${main.temp_min}</p>
+                      <p> <b>Cidade:</b> ${name}</p>
+                      <p> <b>Humidade:</b> ${main.humidity}%</p>
+                      <p> <b>Nebulosidade:</b> ${clouds.all}%</p>
+                      <p> <b>Narcer do sol:</b> ${sys.sunrise}</p>
+                      <p> <b>Narcer do sol:</b> ${sys.sunset}</p>
+                      <p> <b>Descrição:</b> ${weather[0]['description']}</p>
+                    </div><!--value-->
+                    
+                    <div class="icone"> <img src="${icon}"/> </div>
+
+                  </idv>
+
+                  
+                  `
+                )
+                //console.log(weather[0]['description']);
+                }
+          }else{
+            setCidade=("");
+          }
         })
 
     
 
-    }
+      }
 
   return (
+
+    <div className="wraper">
+
     <div className="Search">
-        <h3>Clima e Previsão do Tempo / Cidade / Previsão do tempo 15 dias ou Real Time / </h3>
+        <img src='./clima.png' />
 
         <form onSubmit={(e)=>detectSearch(e)}>
 
@@ -48,8 +81,23 @@ function Search(props) {
 
         </form>
     </div>
-  );
 
-}
+    {
+        
+        (cidade != "")?
+        <div dangerouslySetInnerHTML={{__html: cidade}}></div>:
+        <div className="choice" >Pesquise sua Cidade acima...</div>
+        
+
+    }
+
+      <footer className='footer'>© 2024 Everton Frankllin | Powered by - <a href='https://evertonfrankllin.com/'>Everton Frankllin</a></footer>
+
+    </div> //wraper 
+
+    
+  )
+
+};
 
 export default Search;
