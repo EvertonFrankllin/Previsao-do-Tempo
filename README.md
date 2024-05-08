@@ -1,3 +1,27 @@
+# Esse Web App foi escrito em React.js
+Trata-se de uma aplicação de consumo de API, nela coneguiremos buscar o clima e alguns outros parametros, que serão listados abaixo, em RealTime.
+
+## O que Buscaremos?
+1. País;
+2. Temperatura atual;
+3. Temperatura Máxima;
+3. Temperatura Minima;
+4. Cidade;
+5. Humidade;
+6. Nebulosidade;
+7. Nascer e por do Sol;
+8. E uma descrição detalhada a cerca.
+
+## Eu espero que curtam a aplicação
+Deixarei abaixo todos os links que usei para desenvolver a aplicação.
+### Links:
+https://openweathermap.org/current#list
+https://www.flaticon.com/br/autores/flat-icons
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
